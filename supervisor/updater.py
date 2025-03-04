@@ -219,7 +219,7 @@ class Updater(FileConfiguration, CoreSysAttributes):
                         f"Fetching version from {url} response with {request.status}",
                         _LOGGER.warning,
                     )
-                data = await request.read()
+                data = await request.read().replace('ghcr.io', 'ghcr.nju.edu.cn')
 
         except (aiohttp.ClientError, TimeoutError) as err:
             self.sys_supervisor.connectivity = False
