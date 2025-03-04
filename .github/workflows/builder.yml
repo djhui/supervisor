@@ -218,8 +218,8 @@ jobs:
       - name: Pull Supervisor
         if: needs.init.outputs.publish == 'true'
         run: |
-          docker pull ghcr.io/djhui/amd64-hassio-supervisor:${{ needs.init.outputs.version }}
-          docker tag ghcr.io/djhui/amd64-hassio-supervisor:${{ needs.init.outputs.version }} ghcr.io/djhui/amd64-hassio-supervisor:runner
+          docker pull ghcr.io/ha-china/amd64-hassio-supervisor:${{ needs.init.outputs.version }}
+          docker tag ghcr.io/ha-china/amd64-hassio-supervisor:${{ needs.init.outputs.version }} ghcr.io/ha-china/amd64-hassio-supervisor:runner
 
       - name: Create the Supervisor
         run: |
